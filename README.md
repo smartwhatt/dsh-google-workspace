@@ -14,7 +14,7 @@ The plugin is a DSH bundle. Install it by spec, either from the **Plugins** page
 github:smartwhatt/dsh-google-workspace
 ```
 
-Then **restart DSH** so the new plugin module loads, and start a new session.
+The bundle activates immediately and its 20 `google_*` tools appear in the session. If they do not, restart DSH (a replaced package always needs a fresh process).
 
 <details>
 <summary>From a local checkout (development)</summary>
