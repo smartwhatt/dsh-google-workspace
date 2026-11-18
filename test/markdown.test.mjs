@@ -1,0 +1,16 @@
+import { markdownToDocRequests, shiftRequests } from '../src/markdown.js';
+const md = `# Title\n\nIntro with **bold** and *italic* and \`code\`.\n\n## Section\n\n- first\n- second\n\n1. one\n2. two\n\n> quote\n\n\`\`\`\nconst x = 1;\n\`\`\`\n\n[link](https://example.com)`;
+const { text, requests } = markdownToDocRequests(md);
+console.log('TEXT:\n' + text);
+console.log('REQUESTS', requests.length);
+console.log(JSON.stringify(requests.map(r => Object.keys(r)[0])));
+const shifted = shiftRequests(requests, 10);
+console.log('SHIFTED insert index', shifted[0].insertText.location.index, 'first style', JSON.stringify(shifted[1]).slice(0,120));
+const assert = (c, m) => { if (!c) { console.error('FAIL', m); process.exitCode = 1; } };
+assert(text.startsWith('Title\n'), 'heading text');
+assert(text.includes('Intro with bold and italic and code.'), 'inline stripped');
+assert(!text.includes('**'), 'no bold markers');
+const kinds = requests.map(r => Object.keys(r)[0]);
+assert(kinds.includes('createParagraphBullets'), 'bullets');
+assert(kinds.filter(k => k === 'createParagraphBullets').length === 2, 'two bullet groups');
+assert(kinds.includes('updateTextStyle'), 'text styles');

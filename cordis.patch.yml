@@ -1,0 +1,8 @@
+# Google Workspace for DeepSeek Harness.
+#
+# One Host plugin row: it registers the google_* tools on ctx.tools.
+# No child process, no absolute paths — the package resolves from the profile.
+- insert:
+    - id: google-workspace
+      name: '@smartwhatt/dsh-google-workspace'
+      config: {}

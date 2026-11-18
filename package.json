@@ -1,0 +1,42 @@
+{
+  "name": "@smartwhatt/dsh-google-workspace",
+  "version": "1.0.0",
+  "description": "Google Drive, Docs, Sheets and Slides tools for DeepSeek Harness.",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "google-drive",
+    "google-docs",
+    "google-sheets",
+    "google-slides",
+    "mcp"
+  ],
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  },
+  "scripts": {
+    "test": "node test/plugin.test.mjs"
+  }
+}

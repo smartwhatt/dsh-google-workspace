@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Google Workspace",
+    "description": "Search, read and write your Google Drive, Docs, Sheets and Slides with your own OAuth client.",
+    "detail": "docs/DETAIL.md"
+  }
+}

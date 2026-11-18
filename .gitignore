@@ -1,0 +1,6 @@
+node_modules/
+state/
+.npmrc
+.npm-cache/
+*.log
+.DS_Store
