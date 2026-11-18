@@ -8,11 +8,13 @@ You bring your own Google Cloud OAuth client, so your data never passes through 
 
 ## Install
 
-The plugin is a DSH bundle. Install it by spec, either from the **Plugins** page in DSH or by asking your DSH agent:
+The plugin is a DSH bundle. Ask your DSH agent to install it and give this spec:
 
 ```
 github:smartwhatt/dsh-google-workspace
 ```
+
+The agent calls `plugin_manager` with that spec, which installs the package into your profile and enables the bundle. If your DSH build shows an install field on the **Plugins** page, the same spec works there.
 
 The bundle activates immediately and its 20 `google_*` tools appear in the session. If they do not, restart DSH (a replaced package always needs a fresh process).
 
